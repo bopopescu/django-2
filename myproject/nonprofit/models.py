@@ -32,7 +32,7 @@ class Student(models.Model):
 	student_picture = models.FileField(null=True)
 
 	def __str__(self):
-		return 'Student ID: ' + self.student_id + ' - ' + str(self.first_name)  + ' ' + str(self.last_name)
+		return 'Student ID: ' + self.student_alt_id + ' - ' + str(self.first_name)  + ' ' + str(self.last_name)
 
 
 	class Meta:
@@ -63,7 +63,6 @@ class Lesson(models.Model):
 class LessonLevel(models.Model):
     level_name = models.CharField(max_length=50)
     level_description = models.TextField(max_length=500, blank=True, null=True)
-	
     def __str__(self):
          return self.level_id + ' - ' + self.level_name
 
