@@ -60,7 +60,7 @@ class Lesson(models.Model):
 		db_table = 'lesson'
 
 
-class LessonLevel(models.Model):
+class Lessonlevel(models.Model):
     level_name = models.CharField(max_length=50)
     level_description = models.TextField(max_length=500, blank=True, null=True)
     def __str__(self):
