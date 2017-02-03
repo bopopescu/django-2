@@ -4,7 +4,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 class Instructor(models.Model):
-	instructor_alt_id = models.CharField(max_length=50, null=True, unique=True)
+	instructor_alt_id = models.CharField(max_length=50, null=True)
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 	address = models.CharField(max_length=50, blank=True, null=True)
@@ -15,13 +15,13 @@ class Instructor(models.Model):
 	instructor_picture = models.FileField(null=True)
     
 	def __str__(self):
-		return 'Instructor ID: ' + self.student_id + ' - ' + str(self.first_name)  + ' ' + str(self.last_name)
+		return 'Instructor ID: ' + self.instructor_alt_id + ' - ' + str(self.first_name)  + ' ' + str(self.last_name)
 
 	class Meta:
 		db_table = 'instructor'
 
 class Student(models.Model):
-	student_alt_id = models.CharField(max_length=50, null=True, unique=True)
+	student_alt_id = models.CharField(max_length=50, null=True)
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50)
 	address = models.CharField(max_length=50, blank=True, null=True)
