@@ -64,7 +64,7 @@ class LessonLevel(models.Model):
     level_name = models.CharField(max_length=50)
     level_description = models.TextField(max_length=500, blank=True, null=True)
     def __str__(self):
-         return self.level_id + ' - ' + self.level_name
+         return self.level_name
 
     class Meta:
         db_table = 'lesson_level'
