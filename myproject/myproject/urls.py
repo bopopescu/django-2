@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^music/', include('music.urls')),
+    url(r'^oneplace/', include('oneplace.urls')),
     url(r'^nonprofit/', include('nonprofit.urls')),
     url(r'^admin/', admin.site.urls),
 ]

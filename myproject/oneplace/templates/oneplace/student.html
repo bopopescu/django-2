@@ -1,0 +1,11 @@
+
+{% extends 'oneplace/base.html' %}
+{% block title %}All Students{% endblock %}
+{% block body %}
+<div class = "container-fluid">
+<h2>Here are all the Students in the Database</h2>
+<h3>Total Students: {{ studentCount }}</h3>
+<a href="{% url 'oneplace:student_add' %}" class="btn btn-primary btn-lg active classbtnadd">Add Student</a>
+{% include 'oneplace/template_student_list.html' %}
+</div>
+{% endblock %}

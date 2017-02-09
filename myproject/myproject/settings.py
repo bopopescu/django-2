@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'nonprofit.apps.NonprofitConfig',
-    'music.apps.MusicConfig',
+    'oneplace.apps.OneplaceConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

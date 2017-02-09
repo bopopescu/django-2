@@ -26,7 +26,7 @@ body{
  -webkit-transition: .25s box-shadow;
  transition: .25s box-shadow;
  margin-bottom: .25rem;
- padding: 2rem
+ padding: 1.3rem
 }
 .card:focus, .card:hover {
  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -55,7 +55,7 @@ body{
 
 .cont_pad
 {
-padding: 2rem;
+padding: 1rem;
 }
 
 .classbtnadd
@@ -63,20 +63,59 @@ padding: 2rem;
   margin-left: 1rem;
 }
 
-.classbtndel
+
+
+
+
+#btnupdate
+{
+  
+  float: right;
+  margin-bottom: .2rem;
+}
+
+#btndelete
 {
   float: right;
+  margin-bottom: .2rem;
+}
+.carddown
+{
+  margin-bottom: 1rem;
+}
+
+.cardspec .card-header{
+  min-height: 5.8rem;
+}
+
+.card-header h5{
+  font-weight: bold;
+  text-align: center;
+}
+
+.formt{
+  margin-right: 4rem;
+}
+
+.cardsecond
+{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+
+.rightupdate
+{
+  float: right;
+  margin-top:.4rem;
+  
+  margin-bottom:.4rem;
+}
+.rightdelete{
   
 }
 
-.classbtnupd
-{
-  float: right;
-  margin-right: .5rem;
-  margin-top:6rem; 
+.cardmain{
+  margin-bottom:1rem;
 }
 
-.carddown
-{
-  margin-bottom: 1rem
-}

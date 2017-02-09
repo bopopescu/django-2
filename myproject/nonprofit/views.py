@@ -12,12 +12,7 @@ class LessonView(generic.ListView):
     context_object_name ='all_Class'
     def get_queryset(self):
         return Class.objects.all()
-
-'''class StudentView(generic.DetailView):
-    model = BridgeInstructorEnroll
-    template_name = 'nonprofit/student.html'
-    '''
-
+        
 
 def student(request, class_field): 
     student_List = BridgeClassEnroll.objects.filter(class_field=class_field)  
@@ -31,7 +26,7 @@ def student(request, class_field):
     for student_pk in student_List.values():
         student_row=Student.objects.get(pk = student_pk['student_id'])
         student_Info.append(student_row)
-    print (student_Info)    
+       
     context = {'all_Student': student_List, 
                'lesson': lesson, 
                'student_Info': student_Info,
@@ -76,7 +71,6 @@ class LessonUpdate(UpdateView):
 class LessonDelete(DeleteView):
     
     
-    print (student_List)
     model = Class
     success_url = reverse_lazy('nonprofit:lesson')
 
