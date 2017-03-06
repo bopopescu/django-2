@@ -1,0 +1,52 @@
+{% extends 'oneplace/base.html' %}
+{% block title %}View Classes{% endblock %}
+{% block body %}
+<div class = "container-fluid">
+<a href="{% url 'oneplace:lesson_add' %}" class="btn btn-primary btn-lg active classbtnadd">Add Class</a>
+  <div class="card lessontable">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Class Name</th>
+          <th>Class Description</th>
+          <th>Class Capacity</th>
+          <th>Start Time </th>
+          <th>End Time</th>
+          <th>Level</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for lesson in lesson_all %}
+        <tr>
+          <td><a href="{% url 'oneplace:class_enrollment' lesson.id %}" >{{ lesson.class_name }}</a></td>
+          <td>{{ lesson.class_description }}</td>
+          <td>{{ lesson.class_capacity }}</td>
+          <td>{{ lesson.start_time }}</td>
+          <td>{{ lesson.end_time }}</td>
+          <td>{{ lesson.level }}</td>
+          <td>{{ lesson.room_location }}</td>
+          <td> 
+        <form action="{% url 'oneplace:lesson_update' lesson.id %}">
+        {% csrf_token %}
+          <button type = "submit" class="btn btn-outline-info btn-sm">Update</button>
+        </form>
+      </td>
+      <td> 
+        <form action="{% url 'oneplace:lesson_delete' lesson.id %}" method="post">
+        {% csrf_token %}
+          <button type = "submit" class="btn btn-outline-danger btn-sm">Delete</button>  
+        </form>
+      </td>
+        </tr> </a>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+

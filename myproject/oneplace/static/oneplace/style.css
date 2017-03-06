@@ -63,10 +63,6 @@ padding: 1rem;
   margin-left: 1rem;
 }
 
-
-
-
-
 #btnupdate
 {
   
@@ -119,3 +115,43 @@ padding: 1rem;
   margin-bottom:1rem;
 }
 
+#calendar {
+  padding: 6rem;
+  margin: 0 auto;
+  }
+
+
+#calendarbody {
+    margin-top: 5rem;
+    
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    
+  }
+
+
+#calendarbody .card{
+  margin-bottom: 2.5rem;
+}
+
+.chartdeck .card{
+  margin-bottom: 2.5rem;
+
+
+}
+.chartdeck h4{
+  text-align: center;
+
+}
+
+.cardchart {
+  
+  min-width:  20rem;
+  overflow:auto;
+}
+
+
+.lessontable{
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}

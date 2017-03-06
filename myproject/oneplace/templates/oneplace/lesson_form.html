@@ -27,4 +27,11 @@
 	</div>
 </div>
 
+{% load staticfiles %}
+<script src="{% static 'oneplace/datepicker2.3.7/jquery.datetimepicker.full.min.js' %}"></script>
+<script type="text/javascript">
+	jQuery('#id_start_time').datetimepicker({format:'m/d/Y H:i',});
+	jQuery('#id_end_time').datetimepicker({format:'m/d/Y H:i',});
+	
+</script>
 {% endblock %}

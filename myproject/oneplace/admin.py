@@ -1,7 +1,5 @@
 from django.contrib import admin
-
 # Register your models here.
-
 from oneplace.models import Instructor, Student, Lesson, Lesson_level, Student_in_lesson, Instructor_in_lesson
 
 admin.site.register(Instructor)

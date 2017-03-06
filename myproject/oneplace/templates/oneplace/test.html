@@ -1,0 +1,18 @@
+{% extends 'oneplace/base.html' %}
+{% block title %}Welcome to OnePlace{% endblock %}
+{% block body %}
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input id="datetimepicker" type="text" >
+    <input type="submit" value="Submit" />
+</form>
+
+{% load staticfiles %}
+<script src="{% static 'oneplace/datepicker2.3.7/jquery.datetimepicker.full.min.js' %}"></script>
+<script type="text/javascript">
+	jQuery('#id_start_time').datetimepicker();
+	jQuery('#datetimepicker').datetimepicker();
+</script>
+
+{% endblock %}

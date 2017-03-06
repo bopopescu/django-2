@@ -11,6 +11,7 @@ class Instructor(models.Model):
 	state = models.CharField(max_length=20, blank=True, null=True)
 	city = models.CharField(max_length=50, blank=True, null=True)
 	cell_phone = models.CharField(max_length=20, default='###-###-####', null=True)
+	rate = models.DecimalField(decimal_places=2, max_digits=6, blank=True, null=True, default=0)
 	instructor_picture = models.FileField(blank=True,null=True, default='default2.jpg')
     
 	def __str__(self):
@@ -44,6 +45,7 @@ class Lesson(models.Model):
 	class_capacity = models.IntegerField(blank=True, null=True)
 	start_time = models.DateTimeField(blank=True, null=True)
 	end_time = models.DateTimeField(blank=True, null=True)
+	room_location = models.CharField(blank=True, null=True, max_length=30, default='TBA')
 	level = models.ForeignKey('Lesson_level', on_delete=models.CASCADE, blank=True, null=True)
 	student_members = models.ManyToManyField(Student, through='student_in_lesson')
 	instructor_members = models.ManyToManyField(Instructor, through='instructor_in_lesson')
@@ -63,8 +65,8 @@ class Lesson_level(models.Model):
 
 
 class Student_in_lesson(models.Model):
-	student = models.ForeignKey(Student, on_delete=models.CASCADE)
 	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+	student = models.ForeignKey(Student, on_delete=models.CASCADE)
 	enrollment_date = models.DateTimeField(blank=True, null=True, auto_now_add=True)
 
 	def __str__(self):
@@ -77,8 +79,8 @@ class Student_in_lesson(models.Model):
 		return reverse('oneplace:lesson')
 
 class Instructor_in_lesson(models.Model):
-	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 	lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+	instructor = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 	enrollment_date = models.DateTimeField(blank=True, null=True, auto_now_add=True)
 
 	def __str__(self):
